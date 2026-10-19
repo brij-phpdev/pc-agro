@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Digital Moss Color System */
+  --color-moss-ink: #17251F;
+  --color-fog: #E8E7E1;
+  --color-moss-green: #587C60;
+  --color-pistachio: #C0D3B9;
+  --color-mist-grey: #B4B7AE;
+
+  /* Fonts */
+  --f-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--f-poppins);
+  background-color: var(--color-fog);
+  color: var(--color-moss-ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dedcd5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B4B7AE;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #587C60;
+}
+
+/* Hotspot pulsing animation in Moss Green */
+@keyframes pulse-moss {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(88, 124, 96, 0.75);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 14px rgba(88, 124, 96, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(88, 124, 96, 0);
+  }
+}
+
+.hotspot-pulse-moss,
+.hotspot-pulse-citrus {
+  animation: pulse-moss 2.4s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+/* Ken Burns background zoom animation */
+@keyframes kenburns-slow {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns-slow 16s ease-in-out infinite alternate;
+}
+
+/* Slide progress line animation */
+@keyframes lineProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-line-progress {
+  animation: lineProgress 7.5s linear infinite;
+}
+
+/* Fade In animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* MegaMenu Slide Down */
+@keyframes megaMenuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-megaMenu {
+  animation: megaMenuSlide 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
