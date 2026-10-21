@@ -1,16 +1,24 @@
 import React, { useState, useMemo } from 'react';
 import { Breadcrumb } from '../components/ui/Breadcrumb';
 import { Link } from 'react-router-dom';
-import { solarProjectsData } from '../data/solarProjectsData';
-import { Sun, ArrowUpRight, ArrowRight, Eye, CheckCircle2, MapPin, Layers } from 'lucide-react';
+import { 
+  solarProjectsData, 
+  heavyIndustryProjects, 
+  footwearProjects, 
+  institutionalProjects, 
+  openAccessClients, 
+  regionalPresenceData 
+} from '../data/solarProjectsData';
+import { Sun, ArrowUpRight, ArrowRight, Eye, CheckCircle2, MapPin, Factory, Award, Building2, School, Network, Globe } from 'lucide-react';
 import { ProjectHotspot } from '../types';
 
 export const ProjectsPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All Projects');
   const [selectedProjectId, setSelectedProjectId] = useState<string>(solarProjectsData[0].id);
   const [activeHotspot, setActiveHotspot] = useState<ProjectHotspot | null>(null);
+  const [directoryTab, setDirectoryTab] = useState<'Heavy Industry' | 'Footwear & Leather' | 'Institutions' | 'Open Access' | 'Regional Footprint'>('Heavy Industry');
 
-  const filterOptions = ['All Projects', 'Industrial', 'Commercial', 'Institutional', 'Residential'];
+  const filterOptions = ['All Projects', 'Heavy Industry', 'Footwear & Leather', 'Colleges & Institutions', 'Open Access'];
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === 'All Projects') {
@@ -31,14 +39,14 @@ export const ProjectsPage: React.FC = () => {
   return (
     <div className="bg-fog min-h-screen text-moss-ink pb-24">
       
-      {/* 1. HERO SECTION (Exact Copy) */}
+      {/* 1. HERO SECTION */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 border-b border-mist-grey/60 bg-white">
         <div className="max-w-6xl mx-auto space-y-4">
           <Breadcrumb items={breadcrumbs} />
           
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pistachio/50 border border-pistachio text-moss-ink text-xs font-semibold uppercase tracking-wider">
             <Sun size={14} className="text-moss-green" />
-            <span>PROJECT EXPERIENCE</span>
+            <span>PROVEN SOLAR TRACK RECORD</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-moss-ink tracking-tight leading-[1.12]">
@@ -46,10 +54,10 @@ export const ProjectsPage: React.FC = () => {
           </h1>
           
           <p className="text-base sm:text-lg text-moss-ink/80 max-w-3xl leading-relaxed">
-            Explore selected solar project experience across industrial, commercial and institutional applications.
+            From multi-megawatt industrial manufacturing plants and Agra's renowned footwear hubs to premier educational campuses and Open Access grid wheeling, explore PC Agro's verified execution portfolio.
           </p>
 
-          <div className="pt-4">
+          <div className="pt-4 flex flex-wrap items-center gap-3">
             <Link
               to="/contact?requirement=Discuss Similar Project Consultation"
               className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-moss-green hover:bg-moss-ink text-fog text-sm font-semibold tracking-wider transition-colors shadow-soft"
@@ -57,20 +65,24 @@ export const ProjectsPage: React.FC = () => {
               <span>Discuss a Similar Project</span>
               <ArrowUpRight size={16} />
             </Link>
+
+            <span className="text-xs font-semibold text-moss-ink/70 px-4 py-2 rounded-full bg-fog border border-mist-grey">
+              Flagship: 4.6 MWp Mahesh Edible Oil Industries, Agra
+            </span>
           </div>
         </div>
       </section>
 
-      {/* 2. PORTFOLIO SECTION (Exact Copy) */}
+      {/* 2. INTERACTIVE SHOWCASE SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 space-y-10">
         
         {/* Header & Filter Tabs */}
         <div className="space-y-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-moss-ink tracking-tight">
-            Built Around Real Energy Requirements.
+            Selected Interactive Project Highlights
           </h2>
           <p className="text-base text-moss-ink/80 max-w-3xl leading-relaxed">
-            Every project has its own challenges, from available rooftop space to electricity demand. Our portfolio showcases selected applications and project work.
+            Explore key engineering installations equipped with interactive component hot-spots, technical sizing, and system specifications.
           </p>
 
           {/* Filter Pills */}
@@ -102,7 +114,7 @@ export const ProjectsPage: React.FC = () => {
         </div>
 
         {/* Project Selector Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {filteredProjects.map(proj => {
             const isSelected = proj.id === currentProject.id;
             return (
@@ -118,7 +130,7 @@ export const ProjectsPage: React.FC = () => {
                     : 'bg-white text-moss-ink hover:border-moss-green/40 border-mist-grey'
                 }`}
               >
-                <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider mb-2">
+                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider mb-2">
                   <span className={isSelected ? 'text-pistachio' : 'text-moss-green'}>{proj.sector}</span>
                   <span className={`px-2 py-0.5 rounded-full text-[10px] ${isSelected ? 'bg-moss-ink text-fog' : 'bg-fog text-moss-ink border border-mist-grey'}`}>
                     {proj.capacity}
@@ -135,141 +147,269 @@ export const ProjectsPage: React.FC = () => {
           })}
         </div>
 
-        {/* 3. PROJECT DETAIL TEMPLATE CONTAINER */}
+        {/* PROJECT DETAIL CONTAINER */}
         <div className="rounded-[40px] bg-moss-ink text-fog p-6 sm:p-10 lg:p-12 border border-mist-grey/20 shadow-xl space-y-8">
           
-          {/* Metadata Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-8 border-b border-mist-grey/20">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-pistachio block">
-                Project Name
-              </span>
-              <h3 className="text-xl font-bold text-fog mt-1">
+              <div className="flex items-center gap-2 text-xs font-semibold text-pistachio uppercase tracking-wider mb-1">
+                <MapPin size={14} />
+                <span>{currentProject.location}</span>
+                <span>•</span>
+                <span>{currentProject.sector}</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-fog tracking-tight">
                 {currentProject.title}
               </h3>
-            </div>
-
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-pistachio block">
-                Location
-              </span>
-              <p className="text-base font-semibold text-fog mt-1 flex items-center gap-1.5">
-                <MapPin size={15} className="text-pistachio" />
-                {currentProject.location}
+              <p className="text-sm text-fog/80 mt-1 max-w-2xl">
+                {currentProject.tagline}
               </p>
             </div>
 
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-pistachio block">
-                Capacity
-              </span>
-              <p className="text-base font-bold text-pistachio mt-1">
-                {currentProject.capacity}
-              </p>
-            </div>
-
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-pistachio block">
-                Application
-              </span>
-              <p className="text-base font-semibold text-fog mt-1">
-                {currentProject.sector} Solar Solution
-              </p>
+            <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-3.5 rounded-2xl">
+              <div>
+                <span className="text-[10px] uppercase font-bold text-pistachio block">Installed Capacity</span>
+                <span className="text-2xl font-bold text-fog">{currentProject.capacity}</span>
+              </div>
             </div>
           </div>
 
-          {/* Overview text */}
-          <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-pistachio block">
-              Overview
-            </span>
-            <p className="text-base text-fog/90 max-w-4xl leading-relaxed">
-              A solar project developed around the site's energy requirements, installation conditions and operational needs.
-            </p>
-          </div>
+          {/* Interactive Photography with Hotspots */}
+          <div className="relative aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden border border-white/10 group bg-moss-ink/80">
+            <img
+              src={currentProject.image}
+              alt={currentProject.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-moss-ink/60 via-transparent to-transparent pointer-events-none" />
 
-          {/* Project Gallery & Hotspot Inspection (LEDUP.PT benchmark) */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-widest text-pistachio block">
-                Project Gallery
-              </span>
-              <span className="text-xs text-fog/60 flex items-center gap-1.5">
-                <Eye size={14} className="text-pistachio" />
-                Click pulsing hotspots to inspect installed hardware
-              </span>
-            </div>
-
-            <div className="relative aspect-[16/9] w-full rounded-[32px] overflow-hidden border border-mist-grey/20 shadow-2xl bg-black">
-              <img
-                src={currentProject.image}
-                alt={currentProject.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-moss-ink/70 via-transparent to-transparent pointer-events-none" />
-
-              {/* Pulsing Hotspots */}
-              {currentProject.hotspots && currentProject.hotspots.map((spot, sIdx) => (
-                <div
-                  key={sIdx}
-                  style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
-                  className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20 group"
-                  onClick={() => setActiveHotspot(activeHotspot?.productSlug === spot.productSlug ? null : spot)}
+            {/* Hotspots */}
+            {currentProject.hotspots && currentProject.hotspots.map((spot, idx) => (
+              <div
+                key={idx}
+                style={{ left: `${spot.x}%`, top: `${spot.y}%` }}
+                className="absolute -translate-x-1/2 -translate-y-1/2 z-20 group/spot"
+              >
+                <button
+                  type="button"
+                  onClick={() => setActiveHotspot(activeHotspot?.productId === spot.productId ? null : spot)}
+                  className="relative w-8 h-8 rounded-full bg-moss-green text-fog border-2 border-white shadow-xl flex items-center justify-center hover:scale-115 transition-transform animate-pulse"
                 >
-                  <div className="relative flex items-center justify-center">
-                    <span className="absolute w-8 h-8 rounded-full bg-pistachio/40 animate-ping" />
-                    <span className="relative w-7 h-7 rounded-full bg-moss-green border-2 border-fog shadow-lg flex items-center justify-center text-fog text-xs font-bold transition-transform group-hover:scale-125">
-                      {sIdx + 1}
-                    </span>
-                  </div>
+                  <Eye size={14} />
+                </button>
+              </div>
+            ))}
 
-                  {/* Hotspot Hover / Active Tooltip */}
-                  <div className={`absolute bottom-9 left-1/2 -translate-x-1/2 w-56 p-3.5 rounded-2xl bg-white text-moss-ink shadow-2xl border border-mist-grey pointer-events-auto transition-all duration-200 z-30 ${
-                    activeHotspot?.productSlug === spot.productSlug ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100'
-                  }`}>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">
-                      {spot.categoryName}
-                    </span>
-                    <h5 className="text-xs font-bold text-moss-ink mt-0.5 line-clamp-2">
-                      {spot.productName}
-                    </h5>
-                    <div className="pt-2 mt-2 border-t border-mist-grey/40 flex items-center justify-between text-[11px] font-semibold text-moss-green">
-                      <span>View Specifications</span>
-                      <ArrowRight size={12} />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Hotspot Drawer / Card */}
+            {activeHotspot && (
+              <div className="absolute bottom-6 right-6 max-w-sm bg-white text-moss-ink p-5 rounded-2xl shadow-2xl border border-mist-grey z-30 animate-fade-in">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">
+                  {activeHotspot.categoryName}
+                </span>
+                <h5 className="text-sm font-bold text-moss-ink mt-0.5">
+                  {activeHotspot.productName}
+                </h5>
+                <Link
+                  to="/products-list"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-moss-green hover:underline"
+                >
+                  <span>Explore Product Specifications</span>
+                  <ArrowRight size={12} />
+                </Link>
+              </div>
+            )}
           </div>
 
-          {/* Project Highlights */}
-          {currentProject.highlights && (
-            <div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-              {currentProject.highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-sm text-fog/85">
-                  <CheckCircle2 size={16} className="text-pistachio flex-shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </div>
-              ))}
+          {/* Project Description & Highlights */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
+            <div className="lg:col-span-6 space-y-3">
+              <h4 className="text-lg font-bold text-fog">Scope of Installation</h4>
+              <p className="text-sm text-fog/80 leading-relaxed">
+                {currentProject.description}
+              </p>
             </div>
-          )}
+
+            <div className="lg:col-span-6 space-y-3">
+              <h4 className="text-lg font-bold text-fog">Technical Achievements</h4>
+              <div className="space-y-2">
+                {currentProject.highlights?.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5 text-xs text-fog/85">
+                    <CheckCircle2 size={15} className="text-pistachio flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
         </div>
 
       </section>
 
-      {/* 4. PROJECT CTA (Exact Copy) */}
+      {/* 3. COMPLETE VERIFIED PROJECT DIRECTORY (Exact Data from Profile Page 7 & 8) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 space-y-10">
+        
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-mist-grey text-moss-green text-xs font-semibold uppercase tracking-wider">
+            <Factory size={14} />
+            <span>PORTFOLIO DIRECTORY</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-moss-ink tracking-tight">
+            Key Executed Projects & Client Portfolio
+          </h2>
+          <p className="text-sm text-moss-ink/80 leading-relaxed">
+            A comprehensive record of solar installations and Open Access power clients executed by PC Agro across industrial, commercial, and institutional sectors.
+          </p>
+        </div>
+
+        {/* Directory Category Navigation Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 border-b border-mist-grey/70 pb-4">
+          {(['Heavy Industry', 'Footwear & Leather', 'Institutions', 'Open Access', 'Regional Footprint'] as const).map(tab => (
+            <button
+              key={tab}
+              onClick={() => setDirectoryTab(tab)}
+              className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${
+                directoryTab === tab
+                  ? 'bg-moss-ink text-fog shadow-sm font-bold'
+                  : 'bg-white text-moss-ink/80 hover:bg-pistachio/30 border border-mist-grey'
+              }`}
+            >
+              {tab === 'Heavy Industry' && 'Heavy Industries (10 Projects)'}
+              {tab === 'Footwear & Leather' && 'Footwear & Leather (5 Projects)'}
+              {tab === 'Institutions' && 'Colleges & Institutions (8 Projects)'}
+              {tab === 'Open Access' && 'Open Access Energy Clients'}
+              {tab === 'Regional Footprint' && 'Pan-India Regional Footprint'}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab 1: Heavy Industries */}
+        {directoryTab === 'Heavy Industry' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+            {heavyIndustryProjects.map((p, idx) => (
+              <div key={idx} className="p-6 rounded-3xl bg-white border border-mist-grey/70 shadow-sm flex items-start justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-fog border border-mist-grey text-moss-green uppercase">
+                      {p.location}
+                    </span>
+                  </div>
+                  <h4 className="text-base font-bold text-moss-ink">{p.name}</h4>
+                  <p className="text-xs text-moss-ink/70 leading-relaxed">{p.description}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="text-lg font-black text-moss-green block">{p.capacity}</span>
+                  <span className="text-[10px] text-moss-ink/50 uppercase font-semibold">Capacity</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Tab 2: Footwear & Leather */}
+        {directoryTab === 'Footwear & Leather' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+            {footwearProjects.map((p, idx) => (
+              <div key={idx} className="p-6 rounded-3xl bg-white border border-mist-grey/70 shadow-sm flex items-start justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-fog border border-mist-grey text-moss-green uppercase">
+                      {p.location}
+                    </span>
+                  </div>
+                  <h4 className="text-base font-bold text-moss-ink">{p.name}</h4>
+                  <p className="text-xs text-moss-ink/70 leading-relaxed">{p.description}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="text-lg font-black text-moss-green block">{p.capacity}</span>
+                  <span className="text-[10px] text-moss-ink/50 uppercase font-semibold">Capacity</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Tab 3: Institutions */}
+        {directoryTab === 'Institutions' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+            {institutionalProjects.map((p, idx) => (
+              <div key={idx} className="p-6 rounded-3xl bg-white border border-mist-grey/70 shadow-sm flex items-start justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-fog border border-mist-grey text-moss-green uppercase">
+                      {p.location}
+                    </span>
+                  </div>
+                  <h4 className="text-base font-bold text-moss-ink">{p.name}</h4>
+                  <p className="text-xs text-moss-ink/70 leading-relaxed">{p.description}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="text-lg font-black text-moss-green block">{p.capacity}</span>
+                  <span className="text-[10px] text-moss-ink/50 uppercase font-semibold">Capacity</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Tab 4: Open Access */}
+        {directoryTab === 'Open Access' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+            {openAccessClients.map((p, idx) => (
+              <div key={idx} className="p-6 rounded-3xl bg-white border border-mist-grey/70 shadow-sm flex items-start justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-fog border border-mist-grey text-moss-green uppercase">
+                      {p.location}
+                    </span>
+                  </div>
+                  <h4 className="text-base font-bold text-moss-ink">{p.name}</h4>
+                  <p className="text-xs text-moss-ink/70 leading-relaxed">{p.description}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="text-sm font-bold text-moss-green block">{p.capacity}</span>
+                  <span className="text-[10px] text-moss-ink/50 uppercase font-semibold">Service Type</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Tab 5: Regional Footprint */}
+        {directoryTab === 'Regional Footprint' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+            {regionalPresenceData.map((reg, idx) => (
+              <div key={idx} className="p-6 rounded-3xl bg-white border border-mist-grey/70 shadow-sm space-y-3">
+                <div className="flex items-center gap-2 text-moss-green">
+                  <MapPin size={18} />
+                  <h4 className="text-base font-bold text-moss-ink">{reg.region}</h4>
+                </div>
+                <ul className="space-y-1.5 border-t border-mist-grey/50 pt-3">
+                  {reg.clients.map((c, cIdx) => (
+                    <li key={cIdx} className="text-xs text-moss-ink/80 flex items-start gap-2">
+                      <span className="text-moss-green font-bold">•</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+
+      </section>
+
+      {/* 4. PROJECT CTA */}
       <section className="mt-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-10 sm:p-14 rounded-[48px] bg-white border border-mist-grey shadow-sm text-center space-y-5">
           <span className="text-xs font-bold uppercase tracking-widest text-moss-green block">
             NEXT STEPS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-moss-ink tracking-tight">
-            Planning a Project of Your Own?
+            Planning a Project for Your Enterprise?
           </h2>
           <p className="text-base text-moss-ink/80 max-w-2xl mx-auto leading-relaxed">
-            Share your site location and approximate energy requirements to begin a project discussion.
+            Share your monthly power consumption, connected load, and site location for a customized solar feasibility assessment.
           </p>
           <div className="pt-4">
             <Link

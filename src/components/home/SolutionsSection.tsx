@@ -1,35 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Building2, Factory, GraduationCap, ArrowUpRight, ArrowRight, Sun } from 'lucide-react';
+import { Home, Building2, Factory, GraduationCap, ArrowUpRight, ArrowRight, Sun, Network } from 'lucide-react';
 
 export const SolutionsSection: React.FC = () => {
   const solutions = [
     {
       title: 'Residential Solar',
-      slug: 'residential-solar',
+      slug: 'residential',
       icon: Home,
       description: 'Make your rooftop work smarter with solar solutions planned around your household’s energy needs.',
       image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Commercial Solar',
-      slug: 'commercial-solar',
+      slug: 'commercial',
       icon: Building2,
       description: 'Explore solar options for offices, retail spaces and commercial properties.',
       image: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Industrial Solar',
-      slug: 'industrial-solar',
+      slug: 'industrial',
       icon: Factory,
       description: 'Solar solutions for factories, warehouses and manufacturing facilities.',
       image: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80'
     },
     {
-      title: 'Institutional Solar',
-      slug: 'institutional-solar',
+      title: 'Open Access Solar',
+      slug: 'open-access',
+      icon: Network,
+      description: 'Procure bulk renewable power wheeled over the grid with zero rooftop space limitations.',
+      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      title: 'Institutional & Cold Chain',
+      slug: 'institutional',
       icon: GraduationCap,
-      description: 'Explore solar applications for schools, campuses and other institutions.',
+      description: 'Explore solar applications for campuses, schools, and temperature-critical cold storage.',
       image: 'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?auto=format&fit=crop&w=800&q=80'
     }
   ];
@@ -64,8 +71,8 @@ export const SolutionsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 Core Solutions Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 5 Core Solutions Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {solutions.map((sol) => {
             const Icon = sol.icon;
 
@@ -107,10 +114,10 @@ export const SolutionsSection: React.FC = () => {
                 {/* Card Footer Link */}
                 <div className="px-6 pb-6 pt-2">
                   <Link
-                    to={`/solutions#${sol.slug}`}
+                    to={`/solutions/${sol.slug}`}
                     className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-full bg-fog group-hover:bg-moss-ink text-moss-ink group-hover:text-fog text-xs font-semibold border border-mist-grey/60 transition-all duration-200"
                   >
-                    <span>View Specifications</span>
+                    <span>Explore Solution</span>
                     <ArrowRight size={13} className="text-moss-green group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>

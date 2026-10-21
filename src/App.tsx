@@ -12,11 +12,11 @@ import { ResidentialSolarPage } from './pages/solutions/ResidentialSolarPage';
 import { CommercialSolarPage } from './pages/solutions/CommercialSolarPage';
 import { IndustrialSolarPage } from './pages/solutions/IndustrialSolarPage';
 import { InstitutionalSolarPage } from './pages/solutions/InstitutionalSolarPage';
+import { OpenAccessPage } from './pages/solutions/OpenAccessPage';
 import { SystemTypesPage } from './pages/solutions/SystemTypesPage';
 import { ProductsListPage } from './pages/ProductsListPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ProjectsPage } from './pages/ProjectsPage';
-import { CalculatorPage } from './pages/CalculatorPage';
 import { DocumentsPage } from './pages/DocumentsPage';
 import { ResellersPage } from './pages/ResellersPage';
 import { AboutUsPage } from './pages/AboutUsPage';
@@ -41,6 +41,7 @@ export const App: React.FC = () => {
               <Route path="/solutions/commercial" element={<CommercialSolarPage />} />
               <Route path="/solutions/industrial" element={<IndustrialSolarPage />} />
               <Route path="/solutions/institutional" element={<InstitutionalSolarPage />} />
+              <Route path="/solutions/open-access" element={<OpenAccessPage />} />
               <Route path="/solutions/system-types" element={<SystemTypesPage />} />
               
               {/* Products & BOS */}
@@ -53,6 +54,7 @@ export const App: React.FC = () => {
               <Route path="/documents" element={<DocumentsPage />} />
               <Route path="/resellers" element={<ResellersPage />} />
               <Route path="/about-us" element={<AboutUsPage />} />
+              <Route path="/about" element={<Navigate to="/about-us" replace />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="*" element={<NotFoundPage />} />

@@ -232,7 +232,7 @@ export const ContactPage: React.FC = () => {
               </p>
               <div>
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20discuss%20solar%20requirements"
+                  href="https://wa.me/918077429207?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20discuss%20solar%20requirements"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-moss-green hover:bg-fog hover:text-moss-ink text-fog text-xs font-bold uppercase tracking-wider transition-colors shadow-soft"
@@ -246,7 +246,7 @@ export const ContactPage: React.FC = () => {
             {/* Direct Contact Details Card */}
             <div className="p-8 sm:p-10 rounded-[40px] bg-white border border-mist-grey/70 shadow-sm space-y-6">
               <h4 className="text-base font-bold text-moss-ink uppercase tracking-wider">
-                Direct Contact Information
+                Pooran Chand Agro LLP
               </h4>
 
               <div className="space-y-5 text-xs text-moss-ink/80">
@@ -255,8 +255,9 @@ export const ContactPage: React.FC = () => {
                     <Phone size={16} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Phone</span>
-                    <span className="text-sm font-semibold text-moss-ink">[Business Number]</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Direct Lines</span>
+                    <a href="tel:+918077429207" className="text-sm font-semibold text-moss-ink hover:text-moss-green transition-colors block">+91-8077429207</a>
+                    <a href="tel:+919819982899" className="text-sm font-semibold text-moss-ink hover:text-moss-green transition-colors block">+91-9819982899</a>
                   </div>
                 </div>
 
@@ -266,7 +267,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Email</span>
-                    <span className="text-sm font-semibold text-moss-ink">[Business Email]</span>
+                    <a href="mailto:sales@pcagro.in" className="text-sm font-semibold text-moss-ink hover:text-moss-green transition-colors">sales@pcagro.in</a>
                   </div>
                 </div>
 
@@ -275,8 +276,13 @@ export const ContactPage: React.FC = () => {
                     <MapPin size={16} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Address</span>
-                    <span className="text-sm font-semibold text-moss-ink leading-relaxed">[Business Address]</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Corporate Office</span>
+                    <span className="text-sm font-semibold text-moss-ink leading-relaxed block">
+                      Office FF-186, Gaur City Centre, Greater Noida / Noida, UP
+                    </span>
+                    <span className="text-[11px] text-moss-ink/60 block mt-1">
+                      Regd Office: Agra • Branch: Chandigarh
+                    </span>
                   </div>
                 </div>
 

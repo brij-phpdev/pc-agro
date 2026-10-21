@@ -110,31 +110,37 @@ export const Footer: React.FC = () => {
           {/* Business Contact Details (4 cols) */}
           <div className="lg:col-span-4 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-fog mb-4">
-              Contact Details
+              POORAN CHAND AGRO LLP
             </h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-3 text-mist-grey">
                 <Phone size={15} className="text-pistachio flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Phone</span>
-                  <span className="text-fog font-medium">[Business Number]</span>
+                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Direct Lines</span>
+                  <a href="tel:+918077429207" className="text-fog font-medium hover:text-pistachio transition-colors block">+91-8077429207</a>
+                  <a href="tel:+919819982899" className="text-fog font-medium hover:text-pistachio transition-colors block">+91-9819982899</a>
                 </div>
               </li>
               <li className="flex items-start gap-3 text-mist-grey">
                 <Mail size={15} className="text-pistachio flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Email</span>
-                  <span className="text-fog font-medium">[Business Email]</span>
+                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Official Enquiries</span>
+                  <a href="mailto:sales@pcagro.in" className="text-fog font-medium hover:text-pistachio transition-colors">sales@pcagro.in</a>
                 </div>
               </li>
               <li className="flex items-start gap-3 text-mist-grey">
                 <MapPin size={15} className="text-pistachio flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Address</span>
-                  <span className="text-fog font-medium">[Business Address]</span>
+                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Corporate Office</span>
+                  <span className="text-fog font-medium">Office FF-186, Gaur City Centre, Greater Noida / Noida, UP</span>
+                  <span className="text-[10px] text-mist-grey block mt-0.5">Regd Office: Agra • Branch: Chandigarh</span>
                 </div>
               </li>
             </ul>
+
+            <div className="pt-2 text-[10px] text-mist-grey/80 border-t border-mist-grey/10">
+              <span className="text-pistachio font-semibold">Sister Concerns:</span> Sumitra Clean Tech Pvt Ltd • Arna Energies Pvt Ltd
+            </div>
           </div>
 
         </div>

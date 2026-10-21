@@ -104,6 +104,32 @@ const solarCategories: SolarMenuCategory[] = [
     }
   },
   {
+    id: 'open-access',
+    name: 'OPEN ACCESS SOLAR',
+    mainRoute: '/solutions/open-access',
+    subHeader: 'HIGH-TENSION POWER WHEELING',
+    subcategories: [
+      { name: 'Group Captive Power Model', route: '/solutions/open-access' },
+      { name: 'Third-Party PPA (RESCO)', route: '/solutions/open-access' },
+      { name: 'Megawatt Grid Wheeling (1 MW+)', route: '/solutions/open-access' },
+      { name: 'Heavy Industrial Tariff Offset', route: '/solutions/open-access' },
+      { name: 'Regulatory & Banking Coordination', route: '/solutions/open-access' },
+    ],
+    spaceHeader: 'TARGET HEAVY INDUSTRIES',
+    spaces: [
+      { name: 'Cement & Continuous Processing (Ultratech)', route: '/solutions/open-access' },
+      { name: 'Steel Melting & Rolling Mills (Rimjhim)', route: '/solutions/open-access' },
+      { name: 'Dairy & Food Processing (Umang Dairy)', route: '/solutions/open-access' },
+      { name: 'Heavy Engineering & Foundries (Atul)', route: '/solutions/open-access' },
+      { name: 'Large Edible Oil Refineries (Mahesh)', route: '/solutions/open-access' },
+    ],
+    featured: {
+      title: 'OPEN ACCESS MEGAWATT WHEELING',
+      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80',
+      route: '/solutions/open-access'
+    }
+  },
+  {
     id: 'institutional',
     name: 'INSTITUTIONAL SOLAR',
     mainRoute: '/solutions/institutional',
