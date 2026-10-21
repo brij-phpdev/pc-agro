@@ -179,6 +179,9 @@ export const ProjectsPage: React.FC = () => {
             <img
               src={currentProject.image}
               alt={currentProject.title}
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/images/hero-solar-1.jpg';
+              }}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-moss-ink/60 via-transparent to-transparent pointer-events-none" />

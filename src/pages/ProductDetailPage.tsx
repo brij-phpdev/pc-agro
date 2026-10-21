@@ -60,6 +60,10 @@ export const ProductDetailPage: React.FC = () => {
               <img
                 src={selectedImage}
                 alt={product.name}
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/hero-solar-1.jpg';
+                }}
                 className="w-full h-full object-contain transition-all duration-300"
               />
               
@@ -233,7 +237,15 @@ export const ProductDetailPage: React.FC = () => {
                   className="p-6 rounded-[32px] bg-white border border-mist-grey/70 shadow-sm hover:border-moss-green transition-all duration-300 flex items-center gap-4 group"
                 >
                   <div className="w-20 h-20 rounded-2xl bg-fog p-2 flex items-center justify-center flex-shrink-0 border border-mist-grey/50">
-                    <img src={rel.image} alt={rel.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
+                    <img
+                      src={rel.image}
+                      alt={rel.name}
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/images/hero-solar-1.jpg';
+                      }}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                    />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase text-moss-green">{rel.categoryLabel}</span>

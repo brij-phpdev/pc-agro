@@ -122,8 +122,11 @@ export const AboutUsPage: React.FC = () => {
         <div className="max-w-6xl mx-auto mt-12 sm:mt-16">
           <div className="aspect-[16/9] sm:aspect-[21/9] rounded-[40px] overflow-hidden border border-mist-grey shadow-md relative group">
             <img
-              src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1800&q=85"
+              src="/images/hero-solar-2.jpg"
               alt="PC Agro Solar Energy Heritage"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/images/hero-solar-1.jpg';
+              }}
               className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-moss-ink/70 via-transparent to-transparent pointer-events-none" />

@@ -241,6 +241,10 @@ export const ProductsListPage: React.FC = () => {
                     <img
                       src={prod.image}
                       alt={prod.name}
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/images/hero-solar-1.jpg';
+                      }}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                     
