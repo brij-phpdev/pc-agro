@@ -49,9 +49,9 @@ export const Header: React.FC = () => {
           <Link
             to="/"
             className="pointer-events-auto flex items-center gap-2 group focus:outline-none"
-            aria-label="PC Agro Home"
+            aria-label="Puran Chand Agro Home"
           >
-            <Logo className="h-8 sm:h-9" />
+            <Logo className="h-10" />
           </Link>
 
           {/* 2. Center: Translucent Floating Navigation Pill (matches screenshot media_1792409908612_3ac011e2.png) */}

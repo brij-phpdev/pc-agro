@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
           {/* Brand & Slogan (5 cols) */}
           <div className="lg:col-span-5 space-y-4 pr-6">
             <Link to="/" className="inline-block">
-              <Logo className="h-9" />
+              <Logo className="h-10" variant="light" />
             </Link>
             
             <p className="text-sm font-medium text-fog">
