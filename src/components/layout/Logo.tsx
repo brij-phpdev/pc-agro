@@ -20,7 +20,7 @@ export const Logo: React.FC<LogoProps> = ({
   const Emblem = () => (
     <svg 
       viewBox="0 0 240 140" 
-      className={isStacked ? "w-20 h-12" : "w-12 h-8 sm:w-14 sm:h-9"} 
+      className={isStacked ? "w-20 h-12" : "w-8 h-5 xs:w-10 xs:h-6.5 sm:w-14 sm:h-9"} 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
       style={{ overflow: 'visible' }}
@@ -99,7 +99,7 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={`select-none transition-transform duration-200 ${className} ${
-      isStacked ? 'flex flex-col items-center text-center gap-1.5' : 'flex items-center gap-3'
+      isStacked ? 'flex flex-col items-center text-center gap-1.5' : 'flex items-center gap-2 sm:gap-3'
     }`}>
       {/* Official Emblem */}
       <div className="flex-shrink-0 flex items-center justify-center">
@@ -107,9 +107,9 @@ export const Logo: React.FC<LogoProps> = ({
       </div>
 
       {/* Official Typography: PURAN CHAND AGRO */}
-      <div className={`flex flex-col ${isStacked ? 'items-center text-center' : 'items-start text-left'}`}>
+      <div className={`flex flex-col ${isStacked ? 'items-center text-center' : 'items-start text-left min-w-0'}`}>
         <div className="flex items-center font-black tracking-tight leading-none">
-          <span className={`text-base sm:text-lg font-black tracking-[0.06em] uppercase whitespace-nowrap ${
+          <span className={`text-[13px] xs:text-sm sm:text-base md:text-lg font-black tracking-[0.03em] sm:tracking-[0.06em] uppercase whitespace-nowrap ${
             isLight ? 'text-warm-porcelain' : 'text-aubergine-ink'
           }`}>
             PURAN CHAND AGRO
@@ -117,7 +117,7 @@ export const Logo: React.FC<LogoProps> = ({
         </div>
 
         {showSubtitle && (
-          <span className={`text-[8px] sm:text-[9px] font-bold tracking-[0.24em] uppercase leading-tight mt-0.5 whitespace-nowrap ${
+          <span className={`text-[7px] xs:text-[8px] sm:text-[9px] font-bold tracking-[0.14em] sm:tracking-[0.24em] uppercase leading-tight mt-0.5 whitespace-nowrap ${
             isLight ? 'text-mineral-lilac/80' : 'text-smoky-plum'
           }`}>
             Solar Energy • Est. 1978
