@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { solarProductsData } from '../data/solarProductsData';
+import { technologyPartnersData, sourcingStandards } from '../data/partnersData';
 import { Breadcrumb } from '../components/ui/Breadcrumb';
-import { Sun, Search, ArrowUpRight, ArrowRight, Zap, Battery, Wrench, ShieldCheck, Check } from 'lucide-react';
+import { Sun, Search, ArrowUpRight, ArrowRight, Zap, Battery, Wrench, ShieldCheck, Check, Award, Star, CheckCircle2 } from 'lucide-react';
 
 export const ProductsListPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -331,7 +332,90 @@ export const ProductsListPage: React.FC = () => {
 
       </div>
 
-      {/* 4. PRODUCT ENQUIRY CTA SECTION (Exact Copy) */}
+      {/* 4. SOURCE OF PRODUCTS & TECHNOLOGY PARTNERS SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+        <div className="p-8 sm:p-12 rounded-[40px] bg-white border border-mist-grey shadow-sm space-y-12">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-mist-grey/60">
+            <div className="max-w-3xl space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fog border border-mist-grey text-moss-green text-xs font-semibold uppercase tracking-wider">
+                <ShieldCheck size={14} />
+                <span>AUTHORIZED SOURCING & OEM ALLIANCES</span>
+              </div>
+              <h3 className="text-3xl sm:text-4xl font-bold text-moss-ink tracking-tight">
+                Source of Products & Technology Partners
+              </h3>
+              <p className="text-sm text-moss-ink/80 leading-relaxed">
+                We supply genuine, certified equipment directly from global and Indian Tier-1 manufacturers. Zero unauthorized grey-market products, full OEM warranties, and verified bankability.
+              </p>
+            </div>
+
+            <div className="shrink-0">
+              <span className="text-xs font-bold px-4 py-2 rounded-full bg-pistachio/50 text-moss-ink border border-pistachio">
+                100% ALMM & BIS Compliant
+              </span>
+            </div>
+          </div>
+
+          {/* OEM Partners Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {technologyPartnersData.map((partner) => (
+              <div
+                key={partner.id}
+                className="p-6 rounded-3xl bg-fog border border-mist-grey/80 flex flex-col justify-between space-y-4 hover:border-moss-green/40 transition-colors"
+              >
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white border border-mist-grey text-moss-green">
+                      {partner.category}
+                    </span>
+                    {partner.badge && (
+                      <span className="text-[10px] font-bold text-moss-ink/70">
+                        {partner.badge}
+                      </span>
+                    )}
+                  </div>
+                  <h4 className="text-lg font-bold text-moss-ink">
+                    {partner.name}
+                  </h4>
+                  <p className="text-xs font-semibold text-moss-green">
+                    {partner.relationship}
+                  </p>
+                  <p className="text-xs text-moss-ink/75 leading-relaxed">
+                    {partner.description}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-mist-grey/60 flex flex-wrap gap-1.5">
+                  {partner.certifications.map((cert, cIdx) => (
+                    <span key={cIdx} className="text-[10px] font-medium px-2 py-0.5 rounded bg-white text-moss-ink/80 border border-mist-grey/50">
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Sourcing Standards 4 Pillars */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 border-t border-mist-grey/60">
+            {sourcingStandards.map((std, idx) => (
+              <div key={idx} className="space-y-1.5">
+                <div className="flex items-center gap-2 text-moss-green font-bold text-xs uppercase tracking-wider">
+                  <CheckCircle2 size={15} />
+                  <span>{std.title}</span>
+                </div>
+                <p className="text-xs text-moss-ink/70 leading-relaxed pl-5">
+                  {std.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. PRODUCT ENQUIRY CTA SECTION (Exact Copy) */}
       <section className="mt-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-10 sm:p-14 rounded-[48px] bg-moss-ink text-fog text-center space-y-5 border border-mist-grey/20">
           <span className="text-xs font-bold uppercase tracking-widest text-pistachio block">

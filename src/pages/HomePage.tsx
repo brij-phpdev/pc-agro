@@ -4,6 +4,7 @@ import { AboutSection } from '../components/home/AboutSection';
 import { SolutionsSection } from '../components/home/SolutionsSection';
 import { WhyPCAgroSection } from '../components/home/WhyPCAgroSection';
 import { ProjectsShowcase } from '../components/home/ProjectsShowcase';
+import { TechPartnersSection } from '../components/home/TechPartnersSection';
 import { SolarCalculatorSection } from '../components/home/SolarCalculatorSection';
 import { ProcessSection } from '../components/home/ProcessSection';
 import { ClosingCtaSection } from '../components/home/ClosingCtaSection';
@@ -25,6 +26,9 @@ export const HomePage: React.FC = () => {
 
       {/* 5. Featured Projects Section: Real-World Applications & Interactive Hotspots */}
       <ProjectsShowcase />
+
+      {/* 5B. Source of Product & Technology Partners (OEM Alliances) */}
+      <TechPartnersSection />
 
       {/* 6. Solar Calculator Section: What Could Solar Mean for You? */}
       <SolarCalculatorSection />
