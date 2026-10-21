@@ -36,8 +36,8 @@ export const SolarIntro: React.FC = () => {
     <div
       aria-hidden
       onClick={() => setPhase('exit')}
-      className={`solar-intro fixed inset-0 z-[200] bg-aubergine-ink-950 overflow-hidden cursor-pointer ${phase === 'exit' ? 'is-exit' : ''}`}
-      style={{ backgroundColor: '#231b24' }}
+      className={`solar-intro fixed inset-0 z-[200] bg-basalt-950 overflow-hidden cursor-pointer ${phase === 'exit' ? 'is-exit' : ''}`}
+      style={{ backgroundColor: '#202524' }}
     >
       <div className="solar-intro-sun" />
       <div className="solar-intro-horizon" />
@@ -46,7 +46,7 @@ export const SolarIntro: React.FC = () => {
           <Logo variant="light" className="h-12 scale-[1.3] sm:scale-[1.5] origin-center" />
           <span className="solar-intro-sweep" />
         </div>
-        <p className="solar-intro-tag text-[10px] sm:text-xs tracking-[0.35em] uppercase text-solar-brass font-semibold">
+        <p className="solar-intro-tag text-[10px] sm:text-xs tracking-[0.35em] uppercase text-citron font-semibold">
           From Sunlight to Self-Reliance · Est. 1978
         </p>
       </div>
