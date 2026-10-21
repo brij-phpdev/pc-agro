@@ -52,9 +52,9 @@ export const AboutSection: React.FC = () => {
 
           {/* Right Image Composition */}
           <div className="lg:col-span-6 relative">
-            <div className="aspect-[4/3] rounded-[36px] overflow-hidden shadow-md border border-mist-grey relative group">
+            <div data-scroll-scale className="scroll-scale aspect-[4/3] rounded-[36px] overflow-hidden shadow-md border border-mist-grey relative group">
               <img
-                src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+                src="/images/hero-solar-1.jpg"
                 alt="PC Agro Solar Legacy"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
               />

@@ -210,75 +210,54 @@ export const Header: React.FC = () => {
         />
       </header>
 
-      {/* Mobile Drawer Navigation */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white text-moss-ink p-6 pt-24 overflow-y-auto lg:hidden animate-fadeIn">
-          <nav className="space-y-4">
+      {/* Mobile Drawer Navigation Backdrop & Sheet */}
+      <div
+        className={`fixed inset-0 z-40 lg:hidden bg-moss-ink/50 backdrop-blur-xs transition-opacity duration-300 ease-out ${
+          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+      <div
+        className={`mobile-sheet fixed inset-x-0 top-0 z-40 max-h-[90vh] bg-white text-moss-ink px-7 pt-24 pb-10 overflow-y-auto lg:hidden shadow-2xl ${
+          isMobileMenuOpen ? 'is-open' : ''
+        }`}
+        aria-hidden={!isMobileMenuOpen}
+      >
+        <nav className="space-y-1">
+          {[
+            { to: '/solutions', label: 'Solar Solutions' },
+            { to: '/solutions/open-access', label: 'Open Access Energy' },
+            { to: '/products-list', label: 'Products & BOS Components' },
+            { to: '/projects', label: 'Projects Portfolio' },
+            { to: '/about-us', label: 'About Us' },
+            { to: '/resellers', label: 'Partners & Resellers' },
+            { to: '/contact', label: 'Contact Us' },
+          ].map((item, i) => (
             <Link
-              to="/solutions"
+              key={item.to}
+              to={item.to}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block py-3 text-lg font-bold border-b border-fog text-moss-ink hover:text-moss-green"
+              style={{ '--i': i } as React.CSSProperties}
+              className="sheet-item group flex items-center justify-between py-3 text-xl font-medium text-moss-ink hover:text-moss-green transition-colors border-b border-mist-grey/30"
             >
-              Solar Solutions
+              <span>{item.label}</span>
+              <ArrowUpRight size={18} className="text-moss-green opacity-70 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-all" />
             </Link>
-            <div className="pl-4 space-y-2 py-1 text-sm text-moss-ink/80">
-              <Link to="/solutions#residential-solar" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Residential Solar</Link>
-              <Link to="/solutions#commercial-solar" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Commercial Solar</Link>
-              <Link to="/solutions#industrial-solar" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Industrial Solar</Link>
-              <Link to="/solutions#institutional-solar" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Institutional Solar</Link>
-            </div>
+          ))}
 
-            <Link
-              to="/products-list"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block py-3 text-lg font-bold border-b border-fog text-moss-ink hover:text-moss-green"
-            >
-              Products & Components
-            </Link>
-            <div className="pl-4 space-y-2 py-1 text-sm text-moss-ink/80">
-              <Link to="/products-list?category=modules" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Solar Modules</Link>
-              <Link to="/products-list?category=inverters" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Solar Inverters</Link>
-              <Link to="/products-list?category=batteries" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Batteries & Storage</Link>
-              <Link to="/products-list?category=accessories" onClick={() => setIsMobileMenuOpen(false)} className="block py-1 hover:text-moss-green">Solar Kits & Accessories</Link>
-            </div>
-
-            <Link
-              to="/projects"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block py-3 text-lg font-bold border-b border-fog text-moss-ink hover:text-moss-green"
-            >
-              Projects Portfolio
-            </Link>
-
-            <Link
-              to="/about-us"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block py-3 text-lg font-bold border-b border-fog text-moss-ink hover:text-moss-green"
-            >
-              About Us
-            </Link>
-
+          <div className="sheet-item pt-6 mt-4 flex flex-col gap-3" style={{ '--i': 7 } as React.CSSProperties}>
             <Link
               to="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block py-3 text-lg font-bold text-moss-ink hover:text-moss-green"
+              className="w-full flex items-center justify-between px-6 py-3.5 rounded-full bg-moss-green text-fog font-semibold text-xs uppercase tracking-wider shadow-soft"
             >
-              Contact Us
+              <span>Request a Quote</span>
+              <ArrowUpRight size={15} />
             </Link>
-
-            <div className="pt-6">
-              <Link
-                to="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-moss-green text-fog font-semibold text-xs uppercase tracking-wider shadow-soft"
-              >
-                <span>Request a Quote</span>
-                <ArrowUpRight size={15} />
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
+          </div>
+        </nav>
+      </div>
     </>
   );
 };

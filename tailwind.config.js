@@ -144,7 +144,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Manrope', 'Poppins', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Parkinsans', 'Plus Jakarta Sans', 'Manrope', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'Plus Jakarta Sans', 'Manrope', 'system-ui', '-apple-system', 'sans-serif'],
       },
       borderRadius: {
         '4xl': '2rem',
@@ -158,6 +159,7 @@ export default {
         'menu': '0 25px 50px -12px rgba(56, 45, 58, 0.28)',
         'glow-brass': '0 0 25px rgba(199, 163, 90, 0.45)',
         'glow-plum': '0 0 25px rgba(107, 86, 107, 0.35)',
+        'glow-moss': '0 0 25px rgba(88, 124, 96, 0.35)',
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.16, 1, 0.3, 1)',

@@ -60,9 +60,10 @@ export const ProjectsShowcase: React.FC = () => {
         </div>
 
         {/* Interactive Viewer Canvas */}
-        <div className="relative rounded-[36px] overflow-hidden shadow-2xl border border-mist-grey/20 bg-moss-ink">
+        <div data-scroll-scale data-no-reveal className="scroll-scale relative rounded-[36px] overflow-hidden shadow-2xl border border-mist-grey/20 bg-moss-ink">
           
-          <div className="relative aspect-[16/9] min-h-[460px] max-h-[700px] w-full">
+          <div className="panel-shimmer relative aspect-[16/9] min-h-[460px] max-h-[700px] w-full">
+            <span className="sun-sweep" aria-hidden />
             <img
               key={currentProject.id}
               src={currentProject.image}

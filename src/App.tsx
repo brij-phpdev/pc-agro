@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { ScrollToTop } from './components/ui/ScrollToTop';
+import { ScrollMotion } from './components/ui/ScrollMotion';
+import { RouteTransition } from './components/layout/RouteTransition';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 
@@ -29,6 +31,8 @@ export const App: React.FC = () => {
     <CartProvider>
       <Router>
         <ScrollToTop />
+        <ScrollMotion />
+        <RouteTransition />
         <div className="flex flex-col min-h-screen bg-fog text-moss-ink selection:bg-pistachio selection:text-moss-ink font-sans">
           <Header />
           <main className="flex-grow">
