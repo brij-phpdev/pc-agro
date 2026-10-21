@@ -250,7 +250,6 @@ export const Header: React.FC = () => {
             { to: '/products-list', label: 'Products & Equipment' },
             { to: '/projects', label: 'Projects & Installations' },
             { to: '/about-us', label: 'About Us & Heritage' },
-            { to: '/resellers', label: 'Partners & Resellers' },
             { to: '/contact', label: 'Contact Us' },
           ].map((item, i) => (
             <Link

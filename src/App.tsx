@@ -20,7 +20,6 @@ import { ProductsListPage } from './pages/ProductsListPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { DocumentsPage } from './pages/DocumentsPage';
-import { ResellersPage } from './pages/ResellersPage';
 import { AboutUsPage } from './pages/AboutUsPage';
 import { ContactPage } from './pages/ContactPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
@@ -56,7 +55,7 @@ export const App: React.FC = () => {
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/calculator" element={<Navigate to="/#calculator" replace />} />
               <Route path="/documents" element={<DocumentsPage />} />
-              <Route path="/resellers" element={<ResellersPage />} />
+              <Route path="/resellers" element={<Navigate to="/about-us" replace />} />
               <Route path="/about-us" element={<AboutUsPage />} />
               <Route path="/about" element={<Navigate to="/about-us" replace />} />
               <Route path="/contact" element={<ContactPage />} />
