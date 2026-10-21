@@ -110,7 +110,7 @@ export const Logo: React.FC<LogoProps> = ({
       <div className={`flex flex-col ${isStacked ? 'items-center text-center' : 'items-start text-left'}`}>
         <div className="flex items-center font-black tracking-tight leading-none">
           <span className={`text-base sm:text-lg font-black tracking-[0.06em] uppercase whitespace-nowrap ${
-            isLight ? 'text-frost-white' : 'text-deep-fjord'
+            isLight ? 'text-warm-porcelain' : 'text-aubergine-ink'
           }`}>
             PURAN CHAND AGRO
           </span>
@@ -118,7 +118,7 @@ export const Logo: React.FC<LogoProps> = ({
 
         {showSubtitle && (
           <span className={`text-[8px] sm:text-[9px] font-bold tracking-[0.24em] uppercase leading-tight mt-0.5 whitespace-nowrap ${
-            isLight ? 'text-ice-mineral/80' : 'text-glacier'
+            isLight ? 'text-mineral-lilac/80' : 'text-smoky-plum'
           }`}>
             Solar Energy • Est. 1978
           </span>
