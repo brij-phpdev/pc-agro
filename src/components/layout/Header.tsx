@@ -49,7 +49,8 @@ export const Header: React.FC = () => {
           <Link
             to="/"
             className="pointer-events-auto flex items-center gap-2 group focus:outline-none flex-shrink min-w-0"
-            aria-label="Puran Chand Agro Home"
+            aria-label="Puran Chand Agro Home / Dashboard"
+            title="Puran Chand Agro — Home / Dashboard"
           >
             <Logo className="h-9 sm:h-10" />
           </Link>
@@ -57,7 +58,7 @@ export const Header: React.FC = () => {
           {/* 2. Center: Translucent Floating Navigation Pill (matches screenshot media_1792409908612_3ac011e2.png) */}
           <nav className="pointer-events-auto hidden lg:flex items-center">
             <div
-              className={`flex items-center gap-6 px-6 h-11 rounded-full border shadow-xs transition-all duration-300 ${
+              className={`flex items-center gap-5 px-6 h-11 rounded-full border shadow-xs transition-all duration-300 ${
                 isMegaMenuOpen
                   ? 'bg-white border-mist-grey/50 text-moss-ink'
                   : isScrolled
@@ -65,6 +66,18 @@ export const Header: React.FC = () => {
                   : 'bg-white/90 backdrop-blur-md border-white/60 text-moss-ink'
               }`}
             >
+              {/* Home / Dashboard */}
+              <Link
+                to="/"
+                className={`text-xs font-medium tracking-wide transition-colors ${
+                  location.pathname === '/'
+                    ? 'text-moss-green font-bold'
+                    : 'text-moss-ink hover:text-moss-green'
+                }`}
+              >
+                Home
+              </Link>
+
               {/* Solar Solutions with MegaMenu trigger & Active Grey Highlight */}
               <div
                 className="relative"
@@ -180,12 +193,12 @@ export const Header: React.FC = () => {
 
             {/* WhatsApp Quick Connect */}
             <a
-              href="https://wa.me/919876543210?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20enquire%20about%20solar%20solutions"
+              href="https://wa.me/917252000711?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20enquire%20about%20solar%20solutions"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/95 hover:bg-fog text-[#25D366] border border-mist-grey/50 flex items-center justify-center transition-all shadow-xs backdrop-blur-md"
-              aria-label="Chat on WhatsApp"
-              title="Chat with PC Agro"
+              aria-label="Chat on WhatsApp (+91-7252000711)"
+              title="Chat on WhatsApp (+91-7252000711)"
             >
               <MessageCircle size={17} />
             </a>
@@ -245,6 +258,7 @@ export const Header: React.FC = () => {
 
         <nav className="space-y-0.5">
           {[
+            { to: '/', label: 'Home / Dashboard' },
             { to: '/solutions', label: 'Solar Solutions' },
             { to: '/solutions/open-access', label: 'Open Access Energy' },
             { to: '/products-list', label: 'Products & Equipment' },
@@ -276,13 +290,13 @@ export const Header: React.FC = () => {
             </Link>
 
             <a
-              href="https://wa.me/919876543210?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20enquire%20about%20solar%20solutions"
+              href="https://wa.me/917252000711?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20enquire%20about%20solar%20solutions"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366]/10 text-[#128C7E] font-semibold text-xs border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-colors"
             >
               <MessageCircle size={15} />
-              <span>Direct WhatsApp Chat</span>
+              <span>WhatsApp: +91-7252000711</span>
             </a>
           </div>
         </nav>

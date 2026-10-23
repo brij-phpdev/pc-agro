@@ -113,7 +113,7 @@ export const AboutUsPage: React.FC = () => {
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-fog border border-mist-grey text-xs font-semibold text-moss-ink">
               <Building size={14} className="text-moss-green" />
-              Corporate HQ: Gaur City Centre, Noida
+              Corporate HQ: Sector 69, Transport Nagar, Noida
             </span>
           </div>
         </div>

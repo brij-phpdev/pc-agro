@@ -173,13 +173,13 @@ export const ProductDetailPage: React.FC = () => {
               </div>
 
               <a
-                href={`https://wa.me/919876543210?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(product.name)}`}
+                href={`https://wa.me/917252000711?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-moss-ink hover:bg-moss-green text-fog text-xs font-semibold transition-colors"
               >
                 <MessageCircle size={15} className="text-pistachio" />
-                <span>Talk to Our Team via WhatsApp</span>
+                <span>Talk to Our Team via WhatsApp (+91-7252000711)</span>
               </a>
             </div>
 

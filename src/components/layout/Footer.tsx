@@ -116,7 +116,10 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3 text-mist-grey">
                 <Phone size={15} className="text-pistachio flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Direct Lines</span>
+                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Direct Lines & WhatsApp</span>
+                  <a href="https://wa.me/917252000711?text=Hello%20PC%20Agro" target="_blank" rel="noopener noreferrer" className="text-fog font-semibold hover:text-pistachio transition-colors block text-pistachio/90">
+                    +91-7252000711 (WhatsApp)
+                  </a>
                   <a href="tel:+918077429207" className="text-fog font-medium hover:text-pistachio transition-colors block">+91-8077429207</a>
                   <a href="tel:+919819982899" className="text-fog font-medium hover:text-pistachio transition-colors block">+91-9819982899</a>
                 </div>
@@ -131,8 +134,10 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3 text-mist-grey">
                 <MapPin size={15} className="text-pistachio flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Corporate Office</span>
-                  <span className="text-fog font-medium">Office FF-186, Gaur City Centre, Greater Noida / Noida, UP</span>
+                  <span className="text-[10px] uppercase font-bold text-fog/60 block">Corporate Office (Noida)</span>
+                  <span className="text-fog font-medium leading-relaxed block">
+                    A-223, Ground floor, Transport nagar, Sector 69, Gautambuddh nagar, Noida-201301
+                  </span>
                   <span className="text-[10px] text-mist-grey block mt-0.5">Regd Office: Agra • Branch: Chandigarh</span>
                 </div>
               </li>

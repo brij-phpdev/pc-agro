@@ -39,7 +39,7 @@ const slides: HeroSlide[] = [
     titleLine2: 'Engineered for Performance.',
     description: 'Custom rooftop and commercial photovoltaic systems paired with top-tier modules, high-efficiency inverters, and battery storage solutions.',
     primaryBtnText: 'Calculate Solar Potential',
-    primaryBtnLink: '#calculator',
+    primaryBtnLink: '/#calculator',
     secondaryBtnText: 'Explore All Solutions',
     secondaryBtnLink: '/solutions',
     bgUrl: '/images/hero-solar-2.jpg'

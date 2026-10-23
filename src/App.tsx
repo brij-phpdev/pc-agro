@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { CartProvider } from './context/CartContext';
 import { ScrollToTop } from './components/ui/ScrollToTop';
 import { ScrollMotion } from './components/ui/ScrollMotion';
+import { FloatingWhatsApp } from './components/ui/FloatingWhatsApp';
 import { RouteTransition } from './components/layout/RouteTransition';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
@@ -64,6 +65,7 @@ export const App: React.FC = () => {
             </Routes>
           </main>
           <Footer />
+          <FloatingWhatsApp />
         </div>
       </Router>
     </CartProvider>

@@ -228,17 +228,17 @@ export const ContactPage: React.FC = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-fog/80 leading-relaxed">
-                Connect with our team directly on WhatsApp for quick product availability, technical inquiries, or preliminary project advice.
+                Connect with our solar engineering team directly on WhatsApp for quick component availability, rooftop solar evaluation, or preliminary project advice.
               </p>
               <div>
                 <a
-                  href="https://wa.me/918077429207?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20discuss%20solar%20requirements"
+                  href="https://wa.me/917252000711?text=Hello%20PC%20Agro%2C%20I%20would%20like%20to%20discuss%20solar%20requirements"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-moss-green hover:bg-fog hover:text-moss-ink text-fog text-xs font-bold uppercase tracking-wider transition-colors shadow-soft"
                 >
                   <MessageCircle size={15} />
-                  <span>Talk to Our Team</span>
+                  <span>Chat on WhatsApp (+91-7252000711)</span>
                 </a>
               </div>
             </div>
@@ -255,7 +255,8 @@ export const ContactPage: React.FC = () => {
                     <Phone size={16} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Direct Lines</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Direct Lines & WhatsApp</span>
+                    <a href="tel:+917252000711" className="text-sm font-semibold text-moss-ink hover:text-moss-green transition-colors block">+91-7252000711 (WhatsApp / Direct)</a>
                     <a href="tel:+918077429207" className="text-sm font-semibold text-moss-ink hover:text-moss-green transition-colors block">+91-8077429207</a>
                     <a href="tel:+919819982899" className="text-sm font-semibold text-moss-ink hover:text-moss-green transition-colors block">+91-9819982899</a>
                   </div>
@@ -276,9 +277,9 @@ export const ContactPage: React.FC = () => {
                     <MapPin size={16} />
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Corporate Office</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Corporate Office (Noida)</span>
                     <span className="text-sm font-semibold text-moss-ink leading-relaxed block">
-                      Office FF-186, Gaur City Centre, Greater Noida / Noida, UP
+                      A-223, Ground floor, Transport nagar, Sector 69, Gautambuddh nagar, Noida-201301
                     </span>
                     <span className="text-[11px] text-moss-ink/60 block mt-1">
                       Regd Office: Agra • Branch: Chandigarh
