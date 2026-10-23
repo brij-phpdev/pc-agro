@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" fill="none">
+  <defs>
+    <!-- Sun Gradient -->
+    <linearGradient id="sunGrad" x1="280" y1="65" x2="280" y2="155" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FAA61A" />
+      <stop offset="100%" stop-color="#F37023" />
+    </linearGradient>
+
+    <!-- Upper Solar Cells (Royal Blue Gradient) -->
+    <linearGradient id="blueCellGrad" x1="280" y1="110" x2="280" y2="148" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1476C6" />
+      <stop offset="100%" stop-color="#09549C" />
+    </linearGradient>
+
+    <!-- Lower Solar Cells (Agro Teal Gradient) -->
+    <linearGradient id="tealCellGrad" x1="280" y1="140" x2="280" y2="175" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#169E90" />
+      <stop offset="100%" stop-color="#0E786E" />
+    </linearGradient>
+
+    <!-- Drop Shadow for Dimensionality -->
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- 1. SUN RAYS (11 Radiating Triangular Rays) -->
+  <g fill="#FAA61A">
+    <!-- Ray 1 (Far Left) -->
+    <polygon points="214,142 195,142 208,131" />
+    <!-- Ray 2 -->
+    <polygon points="221,123 205,116 220,110" />
+    <!-- Ray 3 -->
+    <polygon points="233,106 221,95 238,92" />
+    <!-- Ray 4 -->
+    <polygon points="248,93 241,78 256,80" />
+    <!-- Ray 5 -->
+    <polygon points="266,85 264,68 276,73" />
+    <!-- Ray 6 (Top Center) -->
+    <polygon points="280,82 280,64 286,82" />
+    <!-- Ray 7 -->
+    <polygon points="294,85 296,68 284,73" transform="scale(-1, 1) translate(-560, 0)" />
+    <!-- Ray 8 -->
+    <polygon points="312,93 319,78 304,80" />
+    <!-- Ray 9 -->
+    <polygon points="327,106 339,95 322,92" />
+    <!-- Ray 10 -->
+    <polygon points="339,123 355,116 340,110" />
+    <!-- Ray 11 (Far Right) -->
+    <polygon points="346,142 365,142 352,131" />
+  </g>
+
+  <!-- 2. SUN SEMICIRCLE -->
+  <path d="M225,146 A55,55 0 0,1 335,146 Z" fill="url(#sunGrad)" />
+
+  <!-- 3. SOLAR PANEL DOME (Curved Perspective Array) -->
+  <!-- Outer Dome Base Shadow / Underlayer -->
+  <path d="M165,178 Q280,102 395,178 Q280,172 165,178 Z" fill="#0A5048" opacity="0.3" />
+
+  <!-- UPPER BLUE CELLS TIER -->
+  <path d="M190,165 Q280,106 370,165 Q280,140 190,165 Z" fill="url(#blueCellGrad)" />
+
+  <!-- LOWER TEAL CELLS TIER -->
+  <path d="M168,176 Q280,140 392,176 Q280,173 168,176 Z" fill="url(#tealCellGrad)" />
+
+  <!-- COMBINED SOLAR DOME WITH INDIVIDUAL MESH SEGMENTS -->
+  <!-- Top Row Cells -->
+  <g fill="url(#blueCellGrad)" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Top Cell 1 -->
+    <path d="M208,160 Q235,138 250,132 L248,145 Q230,152 208,160 Z" />
+    <!-- Top Cell 2 -->
+    <path d="M250,132 Q265,127 277,126 L276,141 Q262,142 248,145 Z" />
+    <!-- Top Cell 3 (Center Right) -->
+    <path d="M283,126 Q295,127 310,132 L312,145 Q298,142 284,141 Z" />
+    <!-- Top Cell 4 (Far Right) -->
+    <path d="M310,132 Q325,138 352,160 Q330,152 312,145 Z" />
+  </g>
+
+  <!-- Bottom Row Cells (Teal) -->
+  <g fill="url(#tealCellGrad)" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Bottom Left 1 -->
+    <path d="M168,176 Q200,166 220,161 L216,174 Q190,175 168,176 Z" />
+    <!-- Bottom Left 2 -->
+    <path d="M220,161 Q238,154 252,150 L250,169 Q232,171 216,174 Z" />
+    <!-- Bottom Center Left -->
+    <path d="M252,150 Q266,147 277,146 L276,168 Q264,168 250,169 Z" />
+    <!-- Bottom Center Right -->
+    <path d="M283,146 Q294,147 308,150 L310,169 Q296,168 284,168 Z" />
+    <!-- Bottom Right 2 -->
+    <path d="M308,150 Q322,154 340,161 L344,174 Q328,171 310,169 Z" />
+    <!-- Bottom Right 1 -->
+    <path d="M340,161 Q360,166 392,176 Q370,175 344,174 Z" />
+  </g>
+
+  <!-- Outer Base Rim Accent -->
+  <path d="M166,176 Q280,173 394,176" stroke="#0E786E" stroke-width="2" fill="none" />
+
+  <!-- 4. OFFICIAL TYPOGRAPHY: POORAN CHAND AGRO -->
+  <text 
+    x="280" 
+    y="238" 
+    text-anchor="middle" 
+    font-family="'Plus Jakarta Sans', 'Manrope', 'Montserrat', system-ui, -apple-system, sans-serif" 
+    font-weight="900" 
+    font-size="34" 
+    letter-spacing="0.08em" 
+    fill="#0C2540"
+  >
+    POORAN CHAND AGRO
+  </text>
+</svg>

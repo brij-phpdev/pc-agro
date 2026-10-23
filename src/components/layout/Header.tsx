@@ -88,8 +88,8 @@ export const Header: React.FC = () => {
             to="/"
             onClick={handleHomeClick}
             className="pointer-events-auto flex items-center gap-2 group focus:outline-none flex-shrink min-w-0 cursor-pointer"
-            aria-label="Puran Chand Agro Home / Dashboard"
-            title="Puran Chand Agro — Home / Dashboard"
+            aria-label="Pooran Chand Agro Home / Dashboard"
+            title="Pooran Chand Agro — Home / Dashboard"
           >
             <Logo className="h-9 sm:h-10" />
           </Link>

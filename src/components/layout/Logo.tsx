@@ -16,7 +16,7 @@ export const Logo: React.FC<LogoProps> = ({
   const isLight = variant === 'light';
   const isStacked = layout === 'stacked';
 
-  // Crisp Vector Emblem based on Official Puran Chand Agro Brand Artwork
+  // Crisp Vector Emblem based on Official Pooran Chand Agro Brand Artwork
   const Emblem = () => (
     <svg 
       viewBox="0 0 240 140" 
@@ -106,13 +106,13 @@ export const Logo: React.FC<LogoProps> = ({
         <Emblem />
       </div>
 
-      {/* Official Typography: PURAN CHAND AGRO */}
+      {/* Official Typography: POORAN CHAND AGRO */}
       <div className={`flex flex-col ${isStacked ? 'items-center text-center' : 'items-start text-left min-w-0'}`}>
         <div className="flex items-center font-black tracking-tight leading-none">
           <span className={`text-[13px] xs:text-sm sm:text-base md:text-lg font-black tracking-[0.03em] sm:tracking-[0.06em] uppercase whitespace-nowrap ${
             isLight ? 'text-warm-porcelain' : 'text-aubergine-ink'
           }`}>
-            PURAN CHAND AGRO
+            POORAN CHAND AGRO
           </span>
         </div>
 

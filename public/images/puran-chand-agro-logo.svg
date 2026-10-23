@@ -95,7 +95,7 @@
   <!-- Outer Base Rim Accent -->
   <path d="M166,176 Q280,173 394,176" stroke="#0E786E" stroke-width="2" fill="none" />
 
-  <!-- 4. OFFICIAL TYPOGRAPHY: PURAN CHAND AGRO -->
+  <!-- 4. OFFICIAL TYPOGRAPHY: POORAN CHAND AGRO -->
   <text 
     x="280" 
     y="238" 
@@ -106,6 +106,6 @@
     letter-spacing="0.08em" 
     fill="#0C2540"
   >
-    PURAN CHAND AGRO
+    POORAN CHAND AGRO
   </text>
 </svg>
