@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
                 <div>
                   <span className="text-[10px] uppercase font-bold text-fog/60 block">Corporate Office (Noida)</span>
                   <span className="text-fog font-medium leading-relaxed block">
-                    A-223, Ground floor, Transport nagar, Sector 69, Gautambuddh nagar, Noida-201301
+                    A-223 Ground Floor, Transport Nagar, Sector 69, Gautambuddh Nagar, Noida-201301
                   </span>
                   <span className="text-[10px] text-mist-grey block mt-0.5">Regd Office: Agra • Branch: Chandigarh</span>
                 </div>

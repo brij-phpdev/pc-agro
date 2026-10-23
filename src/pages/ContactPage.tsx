@@ -279,7 +279,7 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-moss-green block">Corporate Office (Noida)</span>
                     <span className="text-sm font-semibold text-moss-ink leading-relaxed block">
-                      A-223, Ground floor, Transport nagar, Sector 69, Gautambuddh nagar, Noida-201301
+                      A-223 Ground Floor, Transport Nagar, Sector 69, Gautambuddh Nagar, Noida-201301
                     </span>
                     <span className="text-[11px] text-moss-ink/60 block mt-1">
                       Regd Office: Agra • Branch: Chandigarh
