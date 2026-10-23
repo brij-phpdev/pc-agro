@@ -1,43 +1,27 @@
 import React from 'react';
 import { HeroSlider } from '../components/home/HeroSlider';
-import { AboutSection } from '../components/home/AboutSection';
-import { SolutionsSection } from '../components/home/SolutionsSection';
-import { WhyPCAgroSection } from '../components/home/WhyPCAgroSection';
-import { ProjectsShowcase } from '../components/home/ProjectsShowcase';
-import { TechPartnersSection } from '../components/home/TechPartnersSection';
-import { SolarCalculatorSection } from '../components/home/SolarCalculatorSection';
-import { ProcessSection } from '../components/home/ProcessSection';
-import { ClosingCtaSection } from '../components/home/ClosingCtaSection';
+import { SolutionsDock } from '../components/home/SolutionsDock';
+import { BentoGridWhyUs } from '../components/home/BentoGridWhyUs';
+import { CompactSolarCalculator } from '../components/home/CompactSolarCalculator';
+import { ShowcaseCarouselAndConsult } from '../components/home/ShowcaseCarouselAndConsult';
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="space-y-0 bg-chalk">
-      {/* 1. Hero Section: Powering Progress. Harnessing the Sun. */}
+    <div id="top" className="space-y-0 bg-chalk scroll-smooth">
+      {/* 1. Hero Section: Cinematic & Direct with Floating Quick-Stat Bar & Dual CTAs */}
       <HeroSlider />
 
-      {/* 2. Introduction Section: Our Legacy (1978 & 2015-16) */}
-      <AboutSection />
+      {/* 2. Interactive Segmented Solutions Dock (Residential, Commercial, Industrial, Institutional) */}
+      <SolutionsDock />
 
-      {/* 3. Solutions Section: Solar Solutions for Every Scale */}
-      <SolutionsSection />
+      {/* 3. Bento Grid: Trust, Metrics & Engineering Why-Us (Tier-1 Anatomy, Live MWh, Net Metering, SCADA) */}
+      <BentoGridWhyUs />
 
-      {/* 4. Why PC Agro Section: Experience That Moves Energy Forward */}
-      <WhyPCAgroSection />
+      {/* 4. Compact 2-Column Live Solar Calculator: Dynamic Real-Time ROI Engine */}
+      <CompactSolarCalculator />
 
-      {/* 5. Featured Projects Section: Real-World Applications & Interactive Hotspots */}
-      <ProjectsShowcase />
-
-      {/* 5B. Source of Product & Technology Partners (OEM Alliances) */}
-      <TechPartnersSection />
-
-      {/* 6. Solar Calculator Section: What Could Solar Mean for You? */}
-      <SolarCalculatorSection />
-
-      {/* 7. Process Section: A Thoughtful Path to Solar Power (01-04) */}
-      <ProcessSection />
-
-      {/* 8. Closing CTA Section: Start Exploring Your Solar Options Today */}
-      <ClosingCtaSection />
+      {/* 5. Curated Showcase Carousel & Minimal Consultation Strip */}
+      <ShowcaseCarouselAndConsult />
     </div>
   );
 };

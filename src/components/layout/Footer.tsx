@@ -46,7 +46,15 @@ export const Footer: React.FC = () => {
           
           {/* Brand & Slogan (5 cols) */}
           <div className="lg:col-span-5 space-y-4 pr-6">
-            <Link to="/" className="inline-block">
+            <Link
+              to="/"
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                window.dispatchEvent(new CustomEvent('reset-hero'));
+              }}
+              className="inline-block cursor-pointer"
+              title="Return to Home / Top"
+            >
               <Logo className="h-10" variant="light" />
             </Link>
             
@@ -75,7 +83,14 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link to="/" className="hover:text-pistachio transition-colors">
+                <Link
+                  to="/"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                    window.dispatchEvent(new CustomEvent('reset-hero'));
+                  }}
+                  className="hover:text-pistachio transition-colors cursor-pointer"
+                >
                   Home
                 </Link>
               </li>

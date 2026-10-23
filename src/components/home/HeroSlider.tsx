@@ -24,11 +24,11 @@ const slides: HeroSlide[] = [
     eyebrow: 'SOLAR ENERGY. BUILT ON EXPERIENCE.',
     titleLine1: 'Powering Progress.',
     titleLine2: 'Harnessing the Sun.',
-    description: 'From homes to industries, PC Agro helps customers explore dependable solar solutions designed around their energy needs, site conditions and long-term goals.',
-    primaryBtnText: 'Request a Quote',
-    primaryBtnLink: '/contact',
-    secondaryBtnText: 'Explore Our Projects',
-    secondaryBtnLink: '/projects',
+    description: 'Engineering clean solar energy across high-yield industrial rooftops, manufacturing plants, premier institutions, and modern homes with precision tier-1 technology.',
+    primaryBtnText: 'Calculate Savings',
+    primaryBtnLink: '#calculator',
+    secondaryBtnText: 'Explore Solutions',
+    secondaryBtnLink: '#solutions-dock',
     bgUrl: '/images/hero-solar-1.jpg'
   },
   {
@@ -37,11 +37,11 @@ const slides: HeroSlide[] = [
     eyebrow: 'ESTABLISHED 1978. TECHNICAL EXPERTISE.',
     titleLine1: 'Clean Energy.',
     titleLine2: 'Engineered for Performance.',
-    description: 'Custom rooftop and commercial photovoltaic systems paired with top-tier modules, high-efficiency inverters, and battery storage solutions.',
-    primaryBtnText: 'Calculate Solar Potential',
-    primaryBtnLink: '/#calculator',
-    secondaryBtnText: 'Explore All Solutions',
-    secondaryBtnLink: '/solutions',
+    description: 'Custom rooftop and commercial photovoltaic systems paired with top-tier TOPCon bifacial modules, high-efficiency inverters, and battery storage solutions.',
+    primaryBtnText: 'Calculate Savings',
+    primaryBtnLink: '#calculator',
+    secondaryBtnText: 'Explore Solutions',
+    secondaryBtnLink: '#solutions-dock',
     bgUrl: '/images/hero-solar-2.jpg'
   }
 ];
@@ -57,6 +57,15 @@ export const HeroSlider: React.FC = () => {
     }, 7500);
     return () => clearTimeout(timer);
   }, [currentIdx]);
+
+  // Listen to Home / Logo click to reset slider to Slide 01
+  useEffect(() => {
+    const handleReset = () => {
+      setCurrentIdx(0);
+    };
+    window.addEventListener('reset-hero', handleReset);
+    return () => window.removeEventListener('reset-hero', handleReset);
+  }, []);
 
   // Scroll parallax: image drifts slower than the page, copy fades/lifts away
   useEffect(() => {
@@ -143,26 +152,71 @@ export const HeroSlider: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-3 animate-heroRise [animation-delay:380ms]">
-            <Link
-              to={activeSlide.primaryBtnLink}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-moss-green hover:bg-moss-green-600 text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-glow-moss group"
+            <a
+              href="#calculator"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-moss-green hover:bg-moss-green-600 text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-glow-moss group cursor-pointer"
             >
               <span>{activeSlide.primaryBtnText}</span>
               <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </Link>
+            </a>
 
-            <Link
-              to={activeSlide.secondaryBtnLink}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-fog text-xs font-semibold uppercase tracking-wider border border-white/20 backdrop-blur-md transition-all duration-200 group"
+            <a
+              href="#solutions-dock"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('solutions-dock')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-fog text-xs font-semibold uppercase tracking-wider border border-white/20 backdrop-blur-md transition-all duration-200 group cursor-pointer"
             >
               <span>{activeSlide.secondaryBtnText}</span>
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-pistachio" />
-            </Link>
+            </a>
+          </div>
+
+          {/* High-Contrast Floating Quick-Stat Bar at Bottom Fold */}
+          <div className="pt-8 sm:pt-10 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 animate-heroRise [animation-delay:480ms]">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-mist-grey font-medium">
+              <span className="flex items-center gap-2 text-fog font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-pistachio" />
+                15+ Yrs Heritage
+              </span>
+              <span className="hidden sm:inline text-white/20">•</span>
+              <span className="flex items-center gap-2 text-fog font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-pistachio" />
+                50MW+ Installed
+              </span>
+              <span className="hidden sm:inline text-white/20">•</span>
+              <span className="flex items-center gap-2 text-fog font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-pistachio" />
+                Tier-1 Components
+              </span>
+              <span className="hidden md:inline text-white/20">•</span>
+              <span className="hidden md:flex items-center gap-2 text-fog font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-pistachio" />
+                25-Yr Performance Guarantee
+              </span>
+            </div>
+
+            <a
+              href="#solutions-dock"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('solutions-dock')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="hidden lg:flex items-center gap-1.5 text-xs text-pistachio hover:text-white transition-colors font-semibold"
+            >
+              <span>View Solutions</span>
+              <ArrowRight size={13} />
+            </a>
           </div>
         </div>
 
         {/* Slide Pagination - 01 / 02 with active progress bar */}
-        <div className="absolute bottom-8 sm:bottom-12 left-6 sm:left-12 lg:left-20 flex items-center gap-8 text-xs font-semibold">
+        <div className="absolute bottom-6 sm:bottom-8 right-6 sm:right-12 lg:right-20 flex items-center gap-6 text-xs font-semibold">
           {slides.map((s, idx) => {
             const isActive = idx === currentIdx;
             return (

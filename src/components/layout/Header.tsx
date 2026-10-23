@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Search, ChevronDown, ArrowUpRight, Menu, X, MessageCircle } from 'lucide-react';
 import { MegaMenu } from './MegaMenu';
 import { Logo } from './Logo';
@@ -12,6 +12,7 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +28,43 @@ export const Header: React.FC = () => {
     setIsSearchOpen(false);
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
+
+  // Guaranteed Home & Dashboard Navigation: Resets hero, closes menus, and opens from top
+  const handleHomeClick = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+    }
+    setIsMegaMenuOpen(false);
+    setIsSearchOpen(false);
+    setIsMobileMenuOpen(false);
+
+    // Reset Hero Slider to Slide 01
+    window.dispatchEvent(new CustomEvent('reset-hero'));
+
+    if (location.pathname === '/' && !location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      const topEl = document.getElementById('top');
+      if (topEl) {
+        topEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const topEl = document.getElementById('top');
+        if (topEl) {
+          topEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 60);
+    }
+  };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +86,8 @@ export const Header: React.FC = () => {
           {/* 1. Left: Brand Logo */}
           <Link
             to="/"
-            className="pointer-events-auto flex items-center gap-2 group focus:outline-none flex-shrink min-w-0"
+            onClick={handleHomeClick}
+            className="pointer-events-auto flex items-center gap-2 group focus:outline-none flex-shrink min-w-0 cursor-pointer"
             aria-label="Puran Chand Agro Home / Dashboard"
             title="Puran Chand Agro — Home / Dashboard"
           >
@@ -69,7 +108,8 @@ export const Header: React.FC = () => {
               {/* Home / Dashboard */}
               <Link
                 to="/"
-                className={`text-xs font-medium tracking-wide transition-colors ${
+                onClick={handleHomeClick}
+                className={`text-xs font-medium tracking-wide transition-colors cursor-pointer ${
                   location.pathname === '/'
                     ? 'text-moss-green font-bold'
                     : 'text-moss-ink hover:text-moss-green'
@@ -269,7 +309,13 @@ export const Header: React.FC = () => {
             <Link
               key={item.to}
               to={item.to}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                if (item.to === '/') {
+                  handleHomeClick(e);
+                } else {
+                  setIsMobileMenuOpen(false);
+                }
+              }}
               style={{ '--i': i } as React.CSSProperties}
               className="sheet-item group flex items-center justify-between py-2.5 text-base font-semibold text-moss-ink hover:text-moss-green transition-colors border-b border-mist-grey/30"
             >
